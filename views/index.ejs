@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/output.css" rel="stylesheet" />
+</head>
+
+<body id="body" class="bg-slate-950">
+<%- include('partials/common_starting') %>
+<%- include('partials/navbar') %>
+   
+    <div class="flex min-h-screen pt-12">
+        <!--main div -->
+
+        <!--IMP
+flex → puts them in one row.
+
+items-center → aligns them vertically.
+
+justify-center → centers them horizontally inside the sidebar.
+
+space-x-2 → adds a small gap between logo & text.
+-->
+<%- include('partials/sidebar')%>
+      
+
+        <div class="relative mx-6 flex-1 ml-56">
+            <img src="/realreal.png" class="rounded-md" />
+            <!-- object-cover for no distortion-->
+
+            <div class="absolute top-12 left-8 flex flex-col">
+                <!--  -->
+                <h1 class="text-white rounded text-3xl font-extrabold">SIGN UP TODAY</h1>
+                <h1 class="text-white rounded text-3xl font-extrabold">AND RECEIVE</h1>
+                <h1 class="text-white rounded text-3xl font-extrabold">1,000 COINS</h1>
+                <button
+                    class="rounded-md p-2 mt-4 text-gray-200 bg-blue-700 text-xl font-bold hover:bg-blue-800 hover:text-gray-300 hover:cursor-pointer mr-24">
+                    SIGN UP
+                </button>
+            </div>
+
+            <div> <!--crates-->
+                <h2 class="text-gray-300 text-sm border-b-2 mt-5 mb-1 border-gray-700">
+                    Crates
+                </h2>
+                <!-- <div class="flex h-32 space-x-2 "> -->
+                <div class="flex h-32 space-x-2 overflow-hidden scrollbar-hide">
+
+
+                    <img src="/cratespic/image.png"
+                        class="rounded-md object-contain hover:scale-105 transition-transform duration-300" />
+                    <img src="/cratespic/image copy.png"
+                        class="rounded-md object-contain hover:scale-105 transition-transform duration-300" />
+                    <img src="/cratespic/image copy 2.png"
+                        class="rounded-md object-contain hover:scale-105 transition-transform duration-300" />
+                    <img src="/cratespic/image copy 3.png"
+                        class="rounded-md object-contain hover:scale-105 transition-transform duration-300" />
+                    <img src="/cratespic/image copy 4.png"
+                        class="rounded-md object-contain hover:scale-105 transition-transform duration-300" />
+                    <img src="/cratespic/image copy 5.png"
+                        class="rounded-md object-contain hover:scale-105 transition-transform duration-300" />
+                </div>
+            </div>
+
+            <div> <!--bonuses-->
+                <h2 class="text-gray-300 text-sm border-b-2 mt-5 mb-1 border-gray-700">
+                    Bonuses
+                </h2>./public
+                <div class="absolute w-full h-64 space-y-2">
+                    <img src="/cndb.png" class="rounded-md object-contain" />
+                    <!-- without contain, the image distorered-->
+                    <img src="/mbdb.png" class="rounded-md object-contain" />
+                    <img src="/ddb.png" class="rounded-md object-contain" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="/script.js"></script>
+    <script src="/cn.js"></script>
+
+</body>
+
+</html>

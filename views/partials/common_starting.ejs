@@ -1,0 +1,163 @@
+
+    <div id="12000" class="absolute inset-0 z-50 items-start justify-center pt-24 hidden">
+
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" aria-hidden="true"></div>
+
+        <div
+            class="max-h-80 overflow-y-auto relative w-full max-w-sm rounded-xl border border-purple-700/50 bg-gray-900/95 p-6 shadow-2xl transition-all duration-300 ease-in-out transform scale-100 opacity-100">
+
+            <div class="flex items-center justify-between border-b border-gray-700/50 pb-3 mb-4">
+                <h3 class="text-xl font-semibold text-white flex items-center">
+                    <span class="mr-2 text-yellow-400">⭐</span> Live Player Activity
+                </h3>
+                <button onclick="toggle_12000()" type="button"
+                    class="text-gray-400 hover:text-white transition duration-150 hover:cursor-pointer">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="text-center mb-6">
+                <p class="text-6xl font-extrabold text-green-400 leading-none">12,000</p>
+                <p class="text-sm text-gray-400 mt-1">*Currently active across all games.</p>
+            </div>
+
+            <div class="space-y-3">
+                <div class="flex justify-between items-center text-lg text-white">
+                    <span class="flex items-center">
+                        <span class="mr-3 text-purple-400">⛏</span> Mines:
+                    </span>
+                    <span class="font-bold text-green-400">2,150 players</span>
+                </div>
+
+                <div class="flex justify-between items-center text-lg text-white">
+                    <span class="flex items-center">
+                        <span class="mr-3 text-blue-400">💎</span> Plinko:
+                    </span>
+                    <span class="font-bold text-green-400">1,850 players</span>
+                </div>
+
+                <div class="flex justify-between items-center text-lg text-white">
+                    <span class="flex items-center">
+                        <span class="mr-3 text-red-500">🐉</span> Coin Task:
+                    </span>
+                    <span class="font-bold text-green-400">1,500 players</span>
+                </div>
+
+                <div class="flex justify-between items-center text-lg text-white">
+                    <span class="flex items-center">
+                        <span class="mr-3 text-indigo-400">🔮</span> Special:
+                    </span>
+                    <span class="font-bold text-green-400">6,500 players</span>
+                </div>
+
+                <div class="text-sm text-gray-500 pt-2 text-center border-t border-gray-800 mt-4">
+                    What Are You Waiting For?
+                </div>
+            </div>
+
+            <div class="text-center mt-6">
+                <a href="#" class="text-sm text-purple-400 hover:text-purple-300 transition duration-150">View
+                    Leaderboards</a>
+            </div>
+        </div>
+    </div>
+
+    <!--Faily free-->
+    <div id="dailyfree" class="absolute inset-0 z-50 items-start hidden justify-center pt-24">
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" aria-hidden="true"></div>
+
+        <div
+            class="max-h-80 overflow-y-auto relative w-full max-w-sm rounded-xl border border-purple-700/50 bg-gray-900/95 p-6 shadow-2xl transition-all duration-300 ease-in-out transform scale-100 opacity-100">
+            <div class="flex items-center justify-between border-b border-gray-700/50 pb-3 mb-4">
+                <h3 class="text-xl font-semibold text-white flex items-center">
+                    <span class="mr-2 text-yellow-400">🎁</span> Daily Free Rewards
+                </h3>
+                <button onclick="toggle_dailyFree()" type="button"
+                    class="text-gray-400 hover:text-white transition duration-150 hover:cursor-pointer">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="space-y-3 text-gray-300" id="dailyFreeContent">
+                <p>💎 <strong>Daily Spin:</strong> Try your luck for extra coins every 24 hours!</p>
+                <p>🎲 <strong>Mini Games Bonus:</strong> Get double rewards on your first game of the day.</p>
+                <p>🔥 <strong>Streak Rewards:</strong> Play daily to unlock increasing bonuses.</p>
+                <p>🕒 Next reset: <span class="text-green-400 font-semibold">12h 45m</span></p>
+            </div>
+
+            <div class="mt-5 text-center">
+                <button id="claimBtn" onclick="claimReward()"
+                    class="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition duration-200">
+                    Claim Now
+                </button>
+            </div>
+
+            <div id="rewardMsg" class="hidden mt-4 text-center text-green-400 font-bold text-lg"></div>
+        </div>
+    </div>
+
+    <!--RANK -->
+    <div id="rank" class="absolute inset-0 z-50 items-start justify-center pt-24 hidden">
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" aria-hidden="true"></div>
+
+        <div
+            class="max-h-96 overflow-y-auto relative w-full max-w-sm rounded-xl border border-purple-700/50 bg-gray-900/95 p-6 shadow-2xl transition-all duration-300 ease-in-out transform scale-100 opacity-100">
+            <div class="flex items-center justify-between border-b border-gray-700/50 pb-3 mb-4">
+                <h3 class="text-xl font-semibold text-white flex items-center">
+                    <span class="mr-2 text-yellow-400">🏆</span> Player Rankings
+                </h3>
+                <button onclick="toggle_rank()" type="button"
+                    class="text-gray-400 hover:text-white transition duration-150 hover:cursor-pointer">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="space-y-3 text-gray-300">
+                <p>🏅 <strong>#1:</strong> PlayerX — 10,000 coins</p>
+                <p>🥈 <strong>#2:</strong> GamerPro — 9,420 coins</p>
+                <p>🥉 <strong>#3:</strong> LuckyAce — 8,960 coins</p>
+                <hr class="border-gray-700 my-3">
+                <p class="text-yellow-400 font-semibold">Your Rank: #42 (1,200 coins)</p>
+            </div>
+        </div>
+    </div>
+
+    <!--HELP-->
+    <div id="help" class="absolute inset-0 z-50 items-start justify-center pt-24 hidden">
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" aria-hidden="true"></div>
+
+        <div
+            class="max-h-96 overflow-y-auto relative w-full max-w-sm rounded-xl border border-purple-700/50 bg-gray-900/95 p-6 shadow-2xl transition-all duration-300 ease-in-out transform scale-100 opacity-100">
+            <div class="flex items-center justify-between border-b border-gray-700/50 pb-3 mb-4">
+                <h3 class="text-xl font-semibold text-white flex items-center">
+                    <span class="mr-2 text-yellow-400">❓</span> Help & Support
+                </h3>
+                <button onclick="toggle_help()" type="button"
+                    class="text-gray-400 hover:text-white transition duration-150 hover:cursor-pointer">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="space-y-3 text-gray-300">
+                <p>💬 <strong>How to Play:</strong> Drop the ball and watch it bounce into reward slots.</p>
+                <p>🎯 <strong>Goal:</strong> Earn coins and climb the leaderboard!</p>
+                <p>🎁 <strong>Daily Free:</strong> Claim free coins every 24 hours.</p>
+                <p>📧 <strong>Need Help?</strong> Contact us at <span class="text-purple-400">support@plinko.com</span>
+                </p>
+            </div>
+        </div>
+    </div>

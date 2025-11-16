@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+</head>
+
+<body id="body" class="bg-slate-950">
+    
+<%- include('partials/common_starting') %> 
+    <div class="h-screen flex">
+        <!--main div -->
+
+<%- include('partials/navbar') %>
+    <div class="flex min-h-screen pt-12">
+       
+    <%- include('partials/sidebar') %>
+
+
+        <div class="relative ml-48">
+            <!-- <p class="mt-4 text-gray-700">This is your main content area.</p> -->
+
+            <div class="mx-6 flex">
+
+                <div>
+                    <div id='sidename' class="text-gray-300 text-xl mt-6 mb-2 ml-5 animate-bounce transition-opacity duration-500">Select Side</div>
+                    <div class="flex w-32 space-x-3 m-3">
+                        <img id = "head" src="./head_tails/h.png" class="hover:scale-110 transform transition-transform hover:cursor-pointer" onclick="chose('head')">
+                        <img id = "tail" src="./head_tails/t.png" class="hover:scale-110 transform transition-transform hover:cursor-pointer" onclick="chose('tail')">
+                    </div>
+                </div>
+
+                <div class="h-64 ml-44 mt-16">
+                    <img src="./head_tails/gradient.png" class="h-full">
+                </div>
+                
+                <div class="h-64 ml-10 w-28">
+                    <!-- many ways to do this, other than this would be to to center to the div, like 6ex6-center etc, instead of indivually changing each margin/padding... we could have just do paddding of each if we made w-64 of parent div-->
+                    <h1 id="tamt_ht" class="text-gray-300 mt-32 font-extrabold text-2xl hover:scale-105 hover:text-white text-center">0</h1>
+                    <h1 class="text-gray-500 font-bold hover:scale-105 hover:text-white text-center">Jitna Udaya Hai</h1>
+                </div>
+                <div class="relative w-64 h-80">
+                    <div class="flex items-center justify-center mt-28">
+                    <img src="./head_tails/b1.png" class="absolute w-44">
+                    <img id="loadinght" src="./head_tails/loading.png" class="w-20">
+                    
+                    <img id="hcame" src="./head_tails/heads.png" class="w-20 hidden">
+                    <img id="lcame" src="./head_tails/b2.png" class="w-20 hidden">
+                    </div>
+                    <br><br>
+                    <div id="history" class="ml-8 w-48 h-16 text-center border-gray-700 border-2">heyy</div>
+                </div>
+                <div class="h-64 w-28 flex flex-col text-center">
+                    <h1 id="tpro_ht" class="text-gray-300 mt-32 font-extrabold text-2xl hover:scale-105 hover:text-white">0</h1>
+                    <h1 class="text-gray-500 font-bold hover:scale-105 hover:text-white">Money on Correct</h1>
+                </div>
+            </div>
+
+
+            <div class="border-2 border-gray-700 p-2 rounded-xl ml-48 mr-36">
+                <Input id="num1" placeholder="Enter Amount" type="number" class="text-gray-300 border border-white rounded-md text-center">
+                <button class="text-gray-300 bg-slate-700 p-2 rounded-xl hover:bg-slate-500 hover:scale-105 transition-transform hover:cursor-pointer" onclick="num1.value = '10'">Min</button>
+                <button class="text-gray-300 bg-slate-700 p-2 rounded-xl hover:bg-slate-500 hover:scale-105 transition-transform hover:cursor-pointer"  onclick="num1.value = Number(num1.value)+15">+15</button>
+                <button class="text-gray-300 bg-slate-700 p-2 rounded-xl hover:bg-slate-500 hover:scale-105 transition-transform hover:cursor-pointer"  onclick="num1.value = Number(num1.value)+20">+20</button>
+                <button class="text-gray-300 bg-slate-700 p-2 rounded-xl hover:bg-slate-500 hover:scale-105 transition-transform hover:cursor-pointer"  onclick="num1.value = '1000'">Max</button>
+                <button class="text-white bg-blue-400 p-2 rounded-xl hover:bg-blue-700 hover:text-slate-200 hover:scale-105 transition-transform hover:cursor-pointer" onclick="htstart(num1.value, sidename.textContent)">Place Bet</button>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    </div>
+    </div>
+
+    <script src="./cn.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>

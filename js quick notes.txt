@@ -1,0 +1,161 @@
+<button onclick="document.getElementById('demo').innerHTML = Date()">The time is?</button>
+
+<button onclick="this.innerHTML = Date()">The time is?</button> OR <button onclick="displayDate()">The time is?</button>
+
+Event	Description
+onchange	An HTML element has been changed
+onclick	The user clicks an HTML element
+onmouseover	The user moves the mouse over an HTML element
+onmouseout	The user moves the mouse away from an HTML element
+onkeydown	The user pushes a keyboard key
+onload	The browser has finished loading the page
+
+
+----
+for changing css
+
+<script>
+const circle = document.getElementById('circle')
+
+circle.addEventListener('mouseenter', () => {
+  circle.classList.add('scale-125', 'bg-pink-600')
+})
+circle.addEventListener('mouseleave', () => {
+  circle.classList.remove('scale-125', 'bg-pink-600')
+})
+</script>
+
+addEventListener - element.addEventListener(eventType, callbackFunction, options)
+
+1. button.addEventListener("click", () => {
+  console.log("Button clicked!")
+})
+
+2. 🔘 Mouse Events
+Event	Description
+click	when user clicks
+dblclick	double click
+mousedown	mouse button pressed
+mouseup	mouse button released
+mouseenter	when cursor enters element
+mouseleave	when cursor leaves element
+mousemove	while moving mouse over element
+contextmenu	right-click
+🧍 Keyboard Events
+Event	Description
+keydown	key is pressed
+keyup	key is released
+keypress	(deprecated) when key generates a character
+
+Example:
+
+document.addEventListener("keydown", (event) => {
+  console.log("Pressed:", event.key)
+})
+
+💬 Form/Input Events
+Event	Description
+input	runs whenever value changes
+change	runs when input loses focus and value changed
+focus	element gets focus
+blur	element loses focus
+submit	form submitted
+
+Example:
+
+input.addEventListener("input", (e) => {
+  console.log("Typing:", e.target.value)
+})
+
+🌐 Window / Document Events
+Event	Description
+load	when page fully loaded
+scroll	user scrolls
+resize	window size changes
+beforeunload	leaving page
+DOMContentLoaded	HTML parsed but resources may not be loaded
+
+Example:
+
+window.addEventListener("resize", () => {
+  console.log(window.innerWidth)
+})
+
+🎞️ Animation / Transition Events
+Event	Description
+transitionend	after CSS transition finishes
+animationstart	when animation starts
+animationend	when animation ends
+
+Example:
+
+box.addEventListener("transitionend", () => {
+  console.log("Animation complete!")
+})
+
+📱 Touch / Pointer Events (for mobile)
+Event	Description
+touchstart	finger touches screen
+touchmove	finger moves
+touchend	finger leaves screen
+pointerdown, pointerup, pointermove	general for mouse + touch
+🧩 2. callbackFunction — what runs when the event happens
+
+Can be:
+
+Anonymous function:
+
+button.addEventListener("click", () => alert("Hi"))
+
+
+Named function:
+
+function greet() {
+  alert("Hello!")
+}
+button.addEventListener("click", greet)
+
+
+Event object use:
+
+button.addEventListener("click", (event) => {
+  console.log(event.target)  // element that triggered it
+})
+
+⚙️ 3. options (optional)
+
+You can pass a third argument — an object:
+
+Option	Meaning
+once: true	Runs only once
+capture: true	Captures before bubbling
+passive: true	Improves scroll performance
+
+Example:
+
+button.addEventListener("click", () => console.log("Once!"), { once: true })
+
+💡 Bonus: Remove event listener
+
+If you attach a named function, you can remove it later:
+
+function sayHi() {
+  console.log("Hi")
+}
+
+button.addEventListener("click", sayHi)
+button.removeEventListener("click", sayHi)
+
+⚡ Summary Table
+Part	Example	Description
+eventType	"click"	Type of event
+callbackFunction	(e) => console.log(e)	Function to run
+options	{ once: true }	Optional control settings
+
+----
+
+ON FORM SUBMIT - 
+
+window.location.href = "success.html"
+OR 
+window.open("success.html") --> open new window

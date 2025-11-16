@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-900 flex items-center justify-center h-screen">
+
+    <!-- Hidden checkbox trigger -->
+    <input id="toggle" type="checkbox" class="peer hidden" />
+
+    <!-- Label acts as button -->
+    <label for="toggle" class="flex items-center space-x-2 cursor-pointer">
+
+      <!-- Logo -->
+      <img src="https://placehold.co/100x100"
+           class="h-12 object-contain transition-all duration-700 ease-in-out
+                  peer-checked:fixed peer-checked:inset-0 peer-checked:m-auto peer-checked:h-32" />
+
+      <!-- Text -->
+      <span class="text-white text-xl font-bold transition-opacity duration-500
+                   peer-checked:opacity-0">
+        HEADS AND TAILS
+      </span>
+
+    </label>
+
+  </body>
+</html>

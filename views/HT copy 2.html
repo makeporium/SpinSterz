@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+</head>
+
+<body id="body" class="bg-slate-950">
+    
+<div id="12000" class="absolute inset-0 z-50 items-start justify-center pt-24 hidden">
+
+    <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" aria-hidden="true"></div>
+
+    <div class="max-h-80 overflow-y-auto relative w-full max-w-sm rounded-xl border border-purple-700/50 bg-gray-900/95 p-6 shadow-2xl transition-all duration-300 ease-in-out transform scale-100 opacity-100">
+
+        <div class="flex items-center justify-between border-b border-gray-700/50 pb-3 mb-4">
+            <h3 class="text-xl font-semibold text-white flex items-center">
+                <span class="mr-2 text-yellow-400">⭐</span> Live Player Activity
+            </h3>
+            <button onclick="toggle_12000()" type="button" class="text-gray-400 hover:text-white transition duration-150 hover:cursor-pointer">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+
+        <div class="text-center mb-6">
+            <p class="text-6xl font-extrabold text-green-400 leading-none">12,000</p>
+            <p class="text-sm text-gray-400 mt-1">*Currently active across all games.</p>
+        </div>
+
+        <div class="space-y-3">
+            <div class="flex justify-between items-center text-lg text-white">
+                <span class="flex items-center">
+                    <span class="mr-3 text-purple-400">⛏</span> Mines:
+                </span>
+                <span class="font-bold text-green-400">2,150 players</span>
+            </div>
+
+            <div class="flex justify-between items-center text-lg text-white">
+                <span class="flex items-center">
+                    <span class="mr-3 text-blue-400">💎</span> Plinko:
+                </span>
+                <span class="font-bold text-green-400">1,850 players</span>
+            </div>
+
+            <div class="flex justify-between items-center text-lg text-white">
+                <span class="flex items-center">
+                    <span class="mr-3 text-red-500">🐉</span> Coin Task:
+                </span>
+                <span class="font-bold text-green-400">1,500 players</span>
+            </div>
+
+            <div class="flex justify-between items-center text-lg text-white">
+                <span class="flex items-center">
+                    <span class="mr-3 text-indigo-400">🔮</span> Special:
+                </span>
+                <span class="font-bold text-green-400">6,500 players</span>
+            </div>
+            
+            
+
+            <div class="text-sm text-gray-500 pt-2 text-center border-t border-gray-800 mt-4">
+               What Are You Waiting For?
+            </div>
+        </div>
+        
+        <div class="text-center mt-6">
+             <a href="#" class="text-sm text-purple-400 hover:text-purple-300 transition duration-150">View Leaderboards</a>
+        </div>
+    </div>
+</div>
+    <div class="h-screen flex">
+        <!--main div -->
+        
+    <ul
+        class="items-center flex border-b-2 border-slate-900 shadow-black bg-slate-950 h-12 space-x-2 fixed z-50 w-full">
+        <a href="./"><img src="./logo.png" class="object-contain h-6 object-center ml-10"></a>
+        <img src="./navpics/peop.png" class="object-contain h-6 object-center ml-30">
+        <!-- <li class="text-gray-300 text-sm py-3 hover:font-semibold">12,000</li> -->
+        <li class="text-gray-300 text-sm py-3 cursor-pointer hover:text-white hover:scale-105 transition-transform" onclick="toggle_12000()">
+            12,000
+        </li>
+        <img src="./navpics/award.png" class="object-contain h-6 object-center ml-5">
+        <li class="text-gray-300 text-sm py-3">Daily Free</li>
+        <img src="./navpics/rank.png" class="object-contain h-6 object-center ml-4">
+        <li class="text-gray-300 text-sm py-3">Rank</li>
+        <img src="./navpics/help.png" class="object-contain h-6 object-center ml-5">
+        <li class="text-gray-300 text-sm py-3">Help</li>
+
+        <img src="./navpics/coins.png" class="object-contain h-6 object-center ml-32">
+        <img src="./navpics/deposit.png" class="object-contain h-6 object-center">
+        <img src="./navpics/profile.png" class="object-contain h-6 object-center">
+        <li class="text-gray-300 text-sm py-3 ml-3 mr-4">|</li>
+        <img src="./navpics/settings.png" class="object-contain h-6 object-center">
+
+    </ul>
+
+    <div class="flex min-h-screen pt-12">
+       
+
+        <div
+            class="shadow-2xl bg-slate-950 border-r-2 border-b-2 border-slate-900 w-48 fixed z-50 h-screen flex flex-col space-y-7 items-start">
+
+            <!-- Sidebar Links (with padding) -->
+            <div class="flex flex-col space-y-7 pl-14">
+                <div class="flex items-center space-x-2 mt-8">
+                    <img src="./head_tails/hlogo.png" class="h-6 object-contain">
+                    <a href="./HT.html" class="text-sm text-gray-300 hover:underline">Coin Task</a>
+                </div>
+
+                <div class="flex items-center space-x-3">
+                    <img src="./navpics/hidden.png" class="h-5 object-contain">
+                    <a href="./HiddenGame.html" class="text-sm text-gray-300 hover:underline">Special</a>
+                </div>
+
+                <div class="flex items-center space-x-2">
+                    <img src="./navpics/minesss.png" class="h-6 object-contain">
+                    <a href="./Mines.html" class="text-sm text-gray-300 hover:underline">Mines</a>
+                </div>
+            </div>
+
+            <!-- Image (no padding) -->
+            <img src="./ladki.jpg" class="w-44 object-contain mx-auto rounded-2xl border-2 border-slate-900 hover:scale-200 transition-transform duration-500">
+        </div>
+
+
+        <div class="relative ml-56">
+            <!-- <p class="mt-4 text-gray-700">This is your main content area.</p> -->
+
+            <div class="mx-6 flex">
+
+                <div>
+                    <div id='sidename' class="text-gray-300 text-xl mt-6 mb-2 ml-5 animate-bounce transition-opacity duration-500">Select Side</div>
+                    <div class="flex w-32 space-x-3 m-3">
+                        <img id = "head" src="./head_tails/h.png" class="hover:scale-110 transform transition-transform hover:cursor-pointer" onclick="chose('head')">
+                        <img id = "tail" src="./head_tails/t.png" class="hover:scale-110 transform transition-transform hover:cursor-pointer" onclick="chose('tail')">
+                    </div>
+                </div>
+
+                <div class="h-64 ml-44 mt-16">
+                    <img src="./head_tails/gradient.png" class="h-full">
+                </div>
+                
+                
+                <div class="h-64 ml-10">
+                    <!-- many ways to do this, other than this would be to to center to the div, like 6ex6-center etc, instead of indivually changing each margin/padding... we could have just do paddding of each if we made w-64 of parent div-->
+                    <h1 class="text-gray-300 mt-32 font-extrabold text-2xl hover:scale-105 hover:text-white text-center">1700</h1>
+                    <h1 class="text-gray-500 font-bold hover:scale-105 hover:text-white text-center">Total</h1>
+                </div>
+                <div class="relative w-64 h-80">
+                    <!-- many ways to do this, other than this would be to to center to the div, like 6ex6-center etc, instead of indivually changing each margin/padding... we could have just do paddding of each if we made w-64 of parent div-->
+                    <div class="flex items-center justify-center mt-28">
+                    <img src="./head_tails/b1.png" class="absolute w-44">
+                    <img id="loadinght" src="./head_tails/loading.png" class="w-20">
+                    </div>
+                    <img id="hcame" src="./head_tails/heads.png" class="w-20 hidden">
+                    <img id="lcame" src="./head_tails/b2.png" class="w-20 mt-28 hidden">
+                    <img src="./head_tails/nextht.png" class="mt-16 w-full hover:scale-110 block">
+                </div>
+                <div class="h-64">
+                    <!-- many ways to do this, other than this would be to to center to the div, like 6ex6-center etc, instead of indivually changing each margin/padding... we could have just do paddding of each if we made w-64 of parent div-->
+                    <h1 class="text-gray-300 mt-32 font-extrabold text-2xl pl-10 hover:scale-105 hover:text-white">X5.78</h1>
+                    <h1 class="text-gray-500 font-bold pl-6 hover:scale-105 hover:text-white">Coeffiecient</h1>
+                </div>
+            </div>
+
+
+            <div class="border-2 border-gray-700 p-2 rounded-xl ml-48 mr-36">
+                <!--to get something b/w 80 and 96 (ml-[340px])-->
+                <Input id="num1" placeholder="Enter Amount" type="number" class="text-gray-300 border border-white rounded-md text-center">
+                <button class="text-gray-300 bg-slate-700 p-2 rounded-xl hover:bg-slate-500 hover:scale-105 transition-transform hover:cursor-pointer" onclick="num1.value = '10'">Min</button>
+                <button class="text-gray-300 bg-slate-700 p-2 rounded-xl hover:bg-slate-500 hover:scale-105 transition-transform hover:cursor-pointer"  onclick="num1.value = Number(num1.value)+15">+15</button>
+                <button class="text-gray-300 bg-slate-700 p-2 rounded-xl hover:bg-slate-500 hover:scale-105 transition-transform hover:cursor-pointer"  onclick="num1.value = Number(num1.value)+25">+20</button>
+                <button class="text-gray-300 bg-slate-700 p-2 rounded-xl hover:bg-slate-500 hover:scale-105 transition-transform hover:cursor-pointer"  onclick="num1.value = '1000'">Max</button>
+                <button class="text-white bg-blue-400 p-2 rounded-xl hover:bg-blue-700 hover:text-slate-200 hover:scale-105 transition-transform hover:cursor-pointer" onclick="htstart(num1.value, sidename.textContent)">Place Bet</button>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

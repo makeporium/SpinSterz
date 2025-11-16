@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+</head>
+
+<body class="bg-slate-950">
+    <ul class="items-center flex border-b-2 border-slate-900 shadow-black bg-slate-950 h-12 space-x-2">
+        <a href="./"><img src="./logo.png" class="object-contain h-6 object-center ml-10"></a>
+        <img src="./navpics/peop.png" class="object-contain h-6 object-center ml-30">
+        <li class="text-gray-300 text-sm py-3">12,000</li>
+        <img src="./navpics/award.png" class="object-contain h-6 object-center ml-5">
+        <li class="text-gray-300 text-sm py-3">Daily Free</li>\
+        <img src="./navpics/rank.png" class="object-contain h-6 object-center ml-4">
+        <li class="text-gray-300 text-sm py-3">Rank</li>
+        <img src="./navpics/help.png" class="object-contain h-6 object-center ml-5">
+        <li class="text-gray-300 text-sm py-3">Help</li>
+
+        <img src="./navpics/coins.png" class="object-contain h-6 object-center ml-32">
+        <img src="./navpics/deposit.png" class="object-contain h-6 object-center">
+        <img src="./navpics/profile.png" class="object-contain h-6 object-center">
+        <li class="text-gray-300 text-sm py-3 ml-3 mr-4">|</li>
+        <img src="./navpics/settings.png" class="object-contain h-6 object-center">
+
+    </ul>
+
+    <div class="h-screen flex">
+        <!--main div -->
+        <div class="shadow-2xl bg-slate-950 border-r-2 border-b-2 border-slate-900 w-64">
+            <div class="items-center flex p-3 mt-6 justify-start pl-16 space-x-2">
+                <img src="./head_tails/hlogo.png" class="h-6 object-contain">
+                <a href="./HT.html" class="text-sm text-gray-300 hover:underline">Coin Task</a>
+            </div>
+            <!--IMP
+flex → puts them in one row.
+
+items-center → aligns them vertically.
+
+justify-center → centers them horizontally inside the sidebar.
+
+space-x-2 → adds a small gap between logo & text.
+-->
+            <div class="items-center flex p-3 justify-start pl-16 space-x-2">
+                <img src="./navpics/hidden.png" class="h-5 object-contain">
+                <a href="./HiddenGame.html" class="text-sm text-gray-300 hover:underline">Special</a>
+            </div>
+
+            <div class="items-center flex p-3 justify-start pl-14 space-x-2">
+                <img src="./navpics/minesss.png" class="h-8 object-contain">
+                <a href="./Mines.html" class="text-sm text-gray-300 hover:underline">Mines</a>
+            </div>
+        </div>
+        <div>
+            <!-- <p class="mt-4 text-gray-700">This is your main content area.</p> -->
+
+            <div class="mx-5 flex">
+                <div class="items-center space-y-4">
+                    <div class="border-2 border-gray-700 p-2 rounded-xl text-center justify-center mt-10">
+                        <!--to get something b/w 80 and 96 (ml-[340px])-->
+                        <Input placeholder="Enter Amount" class="text-gray-300 underline">
+                        <button class="text-gray-300 bg-slate-700 p-2 rounded-xl">Min</button>
+                        <button class="text-gray-300 bg-slate-700 p-2 rounded-xl">+15</button>
+                        <button class="text-gray-300 bg-slate-700 p-2 rounded-xl">+20</button>
+                        <button class="text-gray-300 bg-slate-700 p-2 rounded-xl">Max</button>
+                        <button class="text-white bg-blue-400 p-2 mt-2 rounded-xl">Place Bet</button>
+                    </div>
+                    <div class="flex justify-between space-x-2 items-center">
+                        <div class="border-2 border-gray-700 p-2 w-full rounded-xl">
+                            <h2 class="text-white">Mines:</h2>
+                            <Input placeholder="Mines" class="text-gray-300 underline">
+                        </div>
+
+                        <div class="border-2 border-gray-700 p-2 w-full rounded-xl">
+                            <h2 class="text-white">Gems:</h2>
+                            <Input placeholder="Gems" class="text-gray-300 underline">
+                        </div>
+                    </div>
+
+                    <div class="border-2 border-gray-700 p-2 w-full rounded-xl">
+                        <h2 class="text-white">Total Profit:</h2>
+                        <Input placeholder="Total Profit" class="text-gray-300 border-2 border-white">
+                    </div>
+                    <div class="justify-center flex">
+                        <button
+                            class="text-black bg-green-500 p-4 rounded-lg w-full font-bold hover:bg-green-600 hover:text-white hover:border-2 hover:border-red-700 hover:cursor-pointer">Cash
+                            Out</button>
+                    </div>
+                </div>
+                <div class="h-64 mt-10 ml-3">
+                    <img src="./head_tails/gradient.png" class="h-full">
+                </div>
+
+
+                <div class="mt-10 ml-3 h-16">
+                   <img src="./Game.jpg" class="">
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+
+    </div>
+    </div>
+</body>
+
+</html>

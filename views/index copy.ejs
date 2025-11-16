@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/output.css" rel="stylesheet" />
+</head>
+
+<body id="body" class="bg-slate-950">
+
+    <div id="12000" class="absolute inset-0 z-50 items-start justify-center pt-24 hidden">
+
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" aria-hidden="true"></div>
+
+        <div
+            class="max-h-80 overflow-y-auto relative w-full max-w-sm rounded-xl border border-purple-700/50 bg-gray-900/95 p-6 shadow-2xl transition-all duration-300 ease-in-out transform scale-100 opacity-100">
+
+            <div class="flex items-center justify-between border-b border-gray-700/50 pb-3 mb-4">
+                <h3 class="text-xl font-semibold text-white flex items-center">
+                    <span class="mr-2 text-yellow-400">⭐</span> Live Player Activity
+                </h3>
+                <button onclick="toggle_12000()" type="button"
+                    class="text-gray-400 hover:text-white transition duration-150 hover:cursor-pointer">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="text-center mb-6">
+                <p class="text-6xl font-extrabold text-green-400 leading-none">12,000</p>
+                <p class="text-sm text-gray-400 mt-1">*Currently active across all games.</p>
+            </div>
+
+            <div class="space-y-3">
+                <div class="flex justify-between items-center text-lg text-white">
+                    <span class="flex items-center">
+                        <span class="mr-3 text-purple-400">⛏</span> Mines:
+                    </span>
+                    <span class="font-bold text-green-400">2,150 players</span>
+                </div>
+
+                <div class="flex justify-between items-center text-lg text-white">
+                    <span class="flex items-center">
+                        <span class="mr-3 text-blue-400">💎</span> Plinko:
+                    </span>
+                    <span class="font-bold text-green-400">1,850 players</span>
+                </div>
+
+                <div class="flex justify-between items-center text-lg text-white">
+                    <span class="flex items-center">
+                        <span class="mr-3 text-red-500">🐉</span> Coin Task:
+                    </span>
+                    <span class="font-bold text-green-400">1,500 players</span>
+                </div>
+
+                <div class="flex justify-between items-center text-lg text-white">
+                    <span class="flex items-center">
+                        <span class="mr-3 text-indigo-400">🔮</span> Special:
+                    </span>
+                    <span class="font-bold text-green-400">6,500 players</span>
+                </div>
+
+                <div class="text-sm text-gray-500 pt-2 text-center border-t border-gray-800 mt-4">
+                    What Are You Waiting For?
+                </div>
+            </div>
+
+            <div class="text-center mt-6">
+                <a href="#" class="text-sm text-purple-400 hover:text-purple-300 transition duration-150">View
+                    Leaderboards</a>
+            </div>
+        </div>
+    </div>
+
+    <!--Faily free-->
+    <div id="dailyfree" class="absolute inset-0 z-50 items-start hidden justify-center pt-24">
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" aria-hidden="true"></div>
+
+        <div
+            class="max-h-80 overflow-y-auto relative w-full max-w-sm rounded-xl border border-purple-700/50 bg-gray-900/95 p-6 shadow-2xl transition-all duration-300 ease-in-out transform scale-100 opacity-100">
+            <div class="flex items-center justify-between border-b border-gray-700/50 pb-3 mb-4">
+                <h3 class="text-xl font-semibold text-white flex items-center">
+                    <span class="mr-2 text-yellow-400">🎁</span> Daily Free Rewards
+                </h3>
+                <button onclick="toggle_dailyFree()" type="button"
+                    class="text-gray-400 hover:text-white transition duration-150 hover:cursor-pointer">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="space-y-3 text-gray-300" id="dailyFreeContent">
+                <p>💎 <strong>Daily Spin:</strong> Try your luck for extra coins every 24 hours!</p>
+                <p>🎲 <strong>Mini Games Bonus:</strong> Get double rewards on your first game of the day.</p>
+                <p>🔥 <strong>Streak Rewards:</strong> Play daily to unlock increasing bonuses.</p>
+                <p>🕒 Next reset: <span class="text-green-400 font-semibold">12h 45m</span></p>
+            </div>
+
+            <div class="mt-5 text-center">
+                <button id="claimBtn" onclick="claimReward()"
+                    class="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition duration-200">
+                    Claim Now
+                </button>
+            </div>
+
+            <div id="rewardMsg" class="hidden mt-4 text-center text-green-400 font-bold text-lg"></div>
+        </div>
+    </div>
+
+    <!--RANK -->
+    <div id="rank" class="absolute inset-0 z-50 items-start justify-center pt-24 hidden">
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" aria-hidden="true"></div>
+
+        <div
+            class="max-h-96 overflow-y-auto relative w-full max-w-sm rounded-xl border border-purple-700/50 bg-gray-900/95 p-6 shadow-2xl transition-all duration-300 ease-in-out transform scale-100 opacity-100">
+            <div class="flex items-center justify-between border-b border-gray-700/50 pb-3 mb-4">
+                <h3 class="text-xl font-semibold text-white flex items-center">
+                    <span class="mr-2 text-yellow-400">🏆</span> Player Rankings
+                </h3>
+                <button onclick="toggle_rank()" type="button"
+                    class="text-gray-400 hover:text-white transition duration-150 hover:cursor-pointer">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="space-y-3 text-gray-300">
+                <p>🏅 <strong>#1:</strong> PlayerX — 10,000 coins</p>
+                <p>🥈 <strong>#2:</strong> GamerPro — 9,420 coins</p>
+                <p>🥉 <strong>#3:</strong> LuckyAce — 8,960 coins</p>
+                <hr class="border-gray-700 my-3">
+                <p class="text-yellow-400 font-semibold">Your Rank: #42 (1,200 coins)</p>
+            </div>
+        </div>
+    </div>
+
+    <!--HELP-->
+    <div id="help" class="absolute inset-0 z-50 items-start justify-center pt-24 hidden">
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" aria-hidden="true"></div>
+
+        <div
+            class="max-h-96 overflow-y-auto relative w-full max-w-sm rounded-xl border border-purple-700/50 bg-gray-900/95 p-6 shadow-2xl transition-all duration-300 ease-in-out transform scale-100 opacity-100">
+            <div class="flex items-center justify-between border-b border-gray-700/50 pb-3 mb-4">
+                <h3 class="text-xl font-semibold text-white flex items-center">
+                    <span class="mr-2 text-yellow-400">❓</span> Help & Support
+                </h3>
+                <button onclick="toggle_help()" type="button"
+                    class="text-gray-400 hover:text-white transition duration-150 hover:cursor-pointer">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="space-y-3 text-gray-300">
+                <p>💬 <strong>How to Play:</strong> Drop the ball and watch it bounce into reward slots.</p>
+                <p>🎯 <strong>Goal:</strong> Earn coins and climb the leaderboard!</p>
+                <p>🎁 <strong>Daily Free:</strong> Claim free coins every 24 hours.</p>
+                <p>📧 <strong>Need Help?</strong> Contact us at <span class="text-purple-400">support@plinko.com</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <ul
+        class="items-center flex border-b-2 border-slate-900 shadow-black bg-slate-950 h-12 space-x-2 fixed z-50 w-full">
+        <a href="./"><img src="/logo.png" class="object-contain h-6 object-center ml-10"></a>
+        <img src="/navpics/peop.png" class="object-contain h-6 object-center ml-30">
+        <!-- <li class="text-gray-300 text-sm py-3 hover:font-semibold">12,000</li> -->
+        <li class="text-gray-300 text-sm py-3 cursor-pointer hover:text-white hover:scale-105 transition-transform"
+            onclick="toggle_12000();"> <!--this.classList.toggle('text-white'); this.classList.toggle('scale-105');-->
+            12,000
+        </li>
+        <img src="/navpics/award.png" class="object-contain h-6 object-center ml-5">
+        <li class="text-gray-300 text-sm py-3 cursor-pointer hover:text-white hover:scale-105 transition-transform"
+            onclick="toggle_dailyFree()">Daily Free
+        </li>
+        <img src="/navpics/rank.png" class="object-contain h-6 object-center ml-4">
+        <li class="text-gray-300 text-sm py-3 cursor-pointer hover:text-white hover:scale-105 transition-transform"
+            onclick="toggle_rank()">Rank
+        </li>
+        <img src="/navpics/help.png" class="object-contain h-6 object-center ml-5">
+        <li class="text-gray-300 text-sm py-3 cursor-pointer hover:text-white hover:scale-105 transition-transform"
+            onclick="toggle_help()"">Help
+        </li>
+
+        <li id=" coin-count" class="text-gray-300 text-sm py-3 px-2 ml-32">...</li>
+        <img src="/navpics/deposit.png" class="object-contain h-6 object-center">
+        <img src="/navpics/profile.png" class="object-contain h-6 object-center">
+        <li class="text-gray-300 text-sm py-3 ml-3 mr-4">|</li>
+        <img src="/navpics/settings.png" class="object-contain h-6 object-center">
+
+    </ul>
+    <script src="/nav.js"></script>
+    <div class="flex min-h-screen pt-12">
+        <!--main div -->
+
+        <!--IMP
+flex → puts them in one row.
+
+items-center → aligns them vertically.
+
+justify-center → centers them horizontally inside the sidebar.
+
+space-x-2 → adds a small gap between logo & text.
+-->
+
+        <div
+            class="shadow-2xl bg-slate-950 border-r-2 border-b-2 border-slate-900 w-48 fixed z-50 h-screen flex flex-col space-y-7 items-start">
+
+            <!-- Sidebar Links (with padding) -->
+            <div class="flex flex-col space-y-7 pl-14">
+                <div class="flex items-center space-x-2 mt-8">
+                    <img src="/head_tails/hlogo.png" class="h-6 object-contain">
+                    <a href="/ht" class="text-sm text-gray-300 hover:underline">Coin Task</a>
+                </div>
+
+                <div class="flex items-center space-x-3">
+                    <img src="/navpics/hidden.png" class="h-5 object-contain">
+                    <a href="/HiddenGame" class="text-sm text-gray-300 hover:underline">Special</a>
+                </div>
+
+                <div class="flex items-center space-x-2">
+                    <img src="/navpics/minesss.png" class="h-6 object-contain">
+                    <a href="/Mines" class="text-sm text-gray-300 hover:underline">Mines</a>
+                </div>
+            </div>
+
+            <!-- Image (no padding) -->
+           
+            <!-- <img 
+  src="./ladki.jpg" 
+  class="w-44 object-contain mx-auto rounded-2xl border-2 border-slate-900 transition-transform duration-500 hover:scale-200" 
+  ondblclick="zoomImage(this)"
+/> -->
+            
+                 <!-- <img src="./ladki.jpg"
+                class="w-44 object-contain mx-auto rounded-2xl border-2 border-slate-900 hover:scale-200 transition-transform duration-500 shadow-[0_0_20px_#800080]"
+                > -->
+            
+                <div class="relative w-44 mx-auto">
+  <div class="absolute inset-0 rounded-2xl shadow-[0_0_20px_#800080] animate-pulse"></div>
+  <img src="/ladki.jpg"
+       class="relative w-44 object-contain rounded-2xl border-2 border-slate-900" />
+</div>
+
+
+        </div>
+
+        <div class="relative mx-6 flex-1 ml-56">
+            <img src="/realreal.png" class="rounded-md" />
+            <!-- object-cover for no distortion-->
+
+            <div class="absolute top-12 left-8 flex flex-col">
+                <!--  -->
+                <h1 class="text-white rounded text-3xl font-extrabold">SIGN UP TODAY</h1>
+                <h1 class="text-white rounded text-3xl font-extrabold">AND RECEIVE</h1>
+                <h1 class="text-white rounded text-3xl font-extrabold">1,000 COINS</h1>
+                <button
+                    class="rounded-md p-2 mt-4 text-gray-200 bg-blue-700 text-xl font-bold hover:bg-blue-800 hover:text-gray-300 hover:cursor-pointer mr-24">
+                    SIGN UP
+                </button>
+            </div>
+
+            <div> <!--crates-->
+                <h2 class="text-gray-300 text-sm border-b-2 mt-5 mb-1 border-gray-700">
+                    Crates
+                </h2>
+                <!-- <div class="flex h-32 space-x-2 "> -->
+                <div class="flex h-32 space-x-2 overflow-hidden scrollbar-hide">
+
+
+                    <img src="/cratespic/image.png"
+                        class="rounded-md object-contain hover:scale-105 transition-transform duration-300" />
+                    <img src="/cratespic/image copy.png"
+                        class="rounded-md object-contain hover:scale-105 transition-transform duration-300" />
+                    <img src="/cratespic/image copy 2.png"
+                        class="rounded-md object-contain hover:scale-105 transition-transform duration-300" />
+                    <img src="/cratespic/image copy 3.png"
+                        class="rounded-md object-contain hover:scale-105 transition-transform duration-300" />
+                    <img src="/cratespic/image copy 4.png"
+                        class="rounded-md object-contain hover:scale-105 transition-transform duration-300" />
+                    <img src="/cratespic/image copy 5.png"
+                        class="rounded-md object-contain hover:scale-105 transition-transform duration-300" />
+                </div>
+            </div>
+
+            <div> <!--bonuses-->
+                <h2 class="text-gray-300 text-sm border-b-2 mt-5 mb-1 border-gray-700">
+                    Bonuses
+                </h2>./public
+                <div class="absolute w-full h-64 space-y-2">
+                    <img src="/cndb.png" class="rounded-md object-contain" />
+                    <!-- without contain, the image distorered-->
+                    <img src="/mbdb.png" class="rounded-md object-contain" />
+                    <img src="/ddb.png" class="rounded-md object-contain" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="/script.js"></script>
+    <script src="/cn.js"></script>
+
+</body>
+
+</html>

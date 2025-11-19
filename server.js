@@ -86,23 +86,23 @@ app.post("/api/updateCoins", requireLogin, async (req, res) => {
   res.json({ success: true, coins: user.coins });
 });
 
-// SAVE HISTORY (UPDATED FOR MINES)
+// ---------------- SAVE HISTORY (UPDATED FOR ALL GAMES) ----------------
 app.post("/api/saveHistory", requireLogin, async (req, res) => {
   const { result, amount, profit, game, choice } = req.body;
 
   await History.create({
     user: req.session.user._id,
-    game: game || "CoinFlip",  // <= now dynamic
+    game: game || "CoinFlip",   // now dynamic so Mines + BikiniSwap work
     result,
     amount,
     profit,
-    choice: choice || null,   // useful for Mines
+    choice: choice || null,
   });
 
   res.json({ success: true });
 });
 
-// GET HISTORY
+// ---------------- GET HISTORY ----------------
 app.get("/api/getHistory", requireLogin, async (req, res) => {
   const history = await History.find({ user: req.session.user._id })
     .sort({ time: -1 })

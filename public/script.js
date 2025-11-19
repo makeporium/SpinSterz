@@ -1,3 +1,24 @@
+
+async function loadBikiniHistory() {
+    const res = await fetch("/api/getHistory");
+    const data = await res.json();
+
+    const filtered = data.filter(h => h.game === "BikiniSwap");
+
+    let html = "<div>Last Bikini Swap Results:</div>";
+    filtered.forEach(h => {
+        html += `<div class="${h.result === "W" ? "text-green-400" : "text-red-500"}">
+            ${h.result} | Bet: ${h.amount} | Profit: ${h.profit} | Choice: ${h.choice}
+        </div>`;
+    });
+
+    document.getElementById("bikini-history").innerHTML = html;
+}
+
+loadBikiniHistory();
+
+
+
 function toggle_12000() {
   const body = document.getElementById("body");
   if (!body) return;

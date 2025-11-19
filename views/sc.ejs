@@ -11,111 +11,112 @@
     <%- include('partials/common_starting') %>
 
         <div class="h-screen flex">
-           <%- include('partials/navbar') %>
-            <div class="flex min-h-screen pt-12">
-                <!--main div -->
-                 <%- include('partials/sidebar') %>
-                <div>
-                    <!-- <p class="mt-4 text-gray-700">This is your main content area.</p> -->
-
-                    <div id="clr" class="relative mx-5 ml-56 mt-6">
-                        <div id="selected"
-                            class="text-gray-300 text-xl mt-3 animate-bounce transition-opacity duration-500">
-                            Select Colour
-                        </div>
-                        <div class="items-center space-y-4">
-                            <div class="border-2 border-gray-700 p-2 rounded-xl text-center justify-center mt-3.5">
-                                <!--to get something b/w 80 and 96 (ml-[340px])-->
-                                <input id="betInput" placeholder="Enter Amount" type="number"
-                                    class="text-white underline border border-white p-2 rounded-md bg-transparent" />
-                                <div class="mt-2 space-x-2">
-                                    <button onclick="setBet('min')"
-                                        class="text-gray-300 bg-slate-700 p-2 rounded-xl hover:bg-slate-500 hover:scale-105">Min</button>
-                                    <button onclick="changeBet(15)"
-                                        class="text-gray-300 bg-slate-700 p-2 rounded-xl hover:bg-slate-500 hover:scale-105">+15</button>
-                                    <button onclick="changeBet(20)"
-                                        class="text-gray-300 bg-slate-700 p-2 rounded-xl hover:bg-slate-500 hover:scale-105">+20</button>
-                                    <button onclick="setBet('max')"
-                                        class="text-gray-300 bg-slate-700 p-2 rounded-xl hover:bg-slate-500 hover:scale-105">Max</button>
-                                </div>
-                            </div>
-                            <div class="flex justify-between space-x-2 items-center text-center">
-                                <div onclick="color_select('Rose')"
-                                    class="border-2 border-gray-700 bg-[#e4778a] p-4 w-full rounded-xl hover:scale-110 transition-transform hover:underline hover:cursor-pointer duration-300">
-                                    <h2 class="text-black">Rose</h2>
-                                </div>
-
-                                <div onclick="color_select('Blue')"
-                                    class="border-2 border-gray-700  bg-[#99D5F4] p-4 w-full rounded-xl hover:scale-110 transition-transform hover:underline hover:cursor-pointer duration-300">
-                                    <h2 class="text-black">Blue</h2>
-                                </div>
-                            </div>
-
-                            <div class="flex justify-between space-x-2 items-center text-center">
-                                <div onclick="color_select('Violet')"
-                                    class="border-2 border-gray-700 bg-[#753471] p-4 w-full rounded-xl hover:scale-110 transition-transform hover:underline hover:cursor-pointer duration-300">
-                                    <h2 class="text-black">Violet</h2>
-                                </div>
-
-                                <div onclick="color_select('None')"
-                                    class="border-2 border-gray-700  bg-[#f8e4cc] p-4 w-full rounded-xl hover:scale-110 transition-transform hover:underline hover:cursor-pointer duration-300">
-                                    <h2 class="text-black">None</h2>
-                                </div>
-                            </div>
-
-                            <div class="justify-center flex">
-                                <button onclick="startGame()"
-                                    class="text-black bg-green-500 p-4 rounded-lg w-full font-bold hover:bg-green-700 hover:cursor-pointer transition-colors duration-300">Place
-                                    Bet</button>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-
-
-
-                </div>
-            </div>
-            <div>
-                <div>
-                    <div class="flex">
+            <%- include('partials/navbar') %>
+                <div class="flex min-h-screen pt-12">
+                    <!--main div -->
+                    <%- include('partials/sidebar') %>
                         <div>
-                            <div id="result" class="mt-16 text-center text-2xl text-white">
-                                Start Betting
+                            <!-- <p class="mt-4 text-gray-700">This is your main content area.</p> -->
+
+                            <div id="clr" class="relative mx-5 ml-56 mt-6">
+                                <div id="selected"
+                                    class="text-gray-300 text-xl mt-3 animate-bounce transition-opacity duration-500">
+                                    Select Colour
+                                </div>
+                                <div class="items-center space-y-4">
+                                    <div
+                                        class="border-2 border-gray-700 p-2 rounded-xl text-center justify-center mt-3.5">
+                                        <!--to get something b/w 80 and 96 (ml-[340px])-->
+                                        <input id="betInput" placeholder="Enter Amount" type="number"
+                                            class="text-white underline border border-white p-2 rounded-md bg-transparent" />
+                                        <div class="mt-2 space-x-2">
+                                            <button onclick="setBet('min')"
+                                                class="text-gray-300 bg-slate-700 p-2 rounded-xl hover:bg-slate-500 hover:scale-105">Min</button>
+                                            <button onclick="changeBet(15)"
+                                                class="text-gray-300 bg-slate-700 p-2 rounded-xl hover:bg-slate-500 hover:scale-105">+15</button>
+                                            <button onclick="changeBet(20)"
+                                                class="text-gray-300 bg-slate-700 p-2 rounded-xl hover:bg-slate-500 hover:scale-105">+20</button>
+                                            <button onclick="setBet('max')"
+                                                class="text-gray-300 bg-slate-700 p-2 rounded-xl hover:bg-slate-500 hover:scale-105">Max</button>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between space-x-2 items-center text-center">
+                                        <div onclick="color_select('Rose')"
+                                            class="border-2 border-gray-700 bg-[#e4778a] p-4 w-full rounded-xl hover:scale-110 transition-transform hover:underline hover:cursor-pointer duration-300">
+                                            <h2 class="text-black">Rose</h2>
+                                        </div>
+
+                                        <div onclick="color_select('Blue')"
+                                            class="border-2 border-gray-700  bg-[#99D5F4] p-4 w-full rounded-xl hover:scale-110 transition-transform hover:underline hover:cursor-pointer duration-300">
+                                            <h2 class="text-black">Blue</h2>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex justify-between space-x-2 items-center text-center">
+                                        <div onclick="color_select('Violet')"
+                                            class="border-2 border-gray-700 bg-[#753471] p-4 w-full rounded-xl hover:scale-110 transition-transform hover:underline hover:cursor-pointer duration-300">
+                                            <h2 class="text-black">Violet</h2>
+                                        </div>
+
+                                        <div onclick="color_select('None')"
+                                            class="border-2 border-gray-700  bg-[#f8e4cc] p-4 w-full rounded-xl hover:scale-110 transition-transform hover:underline hover:cursor-pointer duration-300">
+                                            <h2 class="text-black">None</h2>
+                                        </div>
+                                    </div>
+
+                                    <div class="justify-center flex">
+                                        <button onclick="startGame()"
+                                            class="text-black bg-green-500 p-4 rounded-lg w-full font-bold hover:bg-green-700 hover:cursor-pointer transition-colors duration-300">Place
+                                            Bet</button>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+
+
+                        </div>
+                </div>
+                <div>
+                    <div>
+                        <div class="flex">
+                            <div>
+                                <div id="result" class="mt-16 text-center text-2xl text-white">
+                                    Start Betting
+                                </div>
+                                <div>
+                                    <img src="./Main_Photos/Full.jpg" id="imagee" class="w-[350px] max-h-screen mt-2">
+                                </div>
                             </div>
                             <div>
-                                <img src="./Main_Photos/Full.jpg" id="imagee" class="w-[350px] max-h-screen mt-2">
-                            </div>
-                        </div>
-                        <div>
-                            <!-- <div id="result"
+                                <!-- <div id="result"
                             class="mt-16 font-sans font-bold text-[#00FFFF] text-3xl text-center w-fit shadow-[0_0_20px_#00FFFF]">
                             Bikini Swap
                             <img src="./Main_Photos/Poster.jpg" class="w-[180px] mt-0 object-contain rounded-md">
                         </div> -->
 
-                            <div class="relative mt-16 w-fit mx-auto">
-                                <!-- Pulsing shadow layer -->
-                                <div
-                                    class="absolute inset-0 rounded-md shadow-[0_0_20px_#00FFFF] animate-pulse blur-sm">
+                                <div class="relative mt-16 w-fit mx-auto">
+                                    <!-- Pulsing shadow layer -->
+                                    <div
+                                        class="absolute inset-0 rounded-md shadow-[0_0_20px_#00FFFF] animate-pulse blur-sm">
+                                    </div>
+
+                                    <!-- Actual content -->
+                                    <div id="result"
+                                        class="relative font-sans font-bold text-[#00FFFF] text-3xl text-center">
+                                        Bikini Swap
+                                        <img src="./Main_Photos/Poster.jpg"
+                                            class="w-[180px] mt-0 object-contain rounded-md mx-auto" />
+                                    </div>
                                 </div>
 
-                                <!-- Actual content -->
-                                <div id="result"
-                                    class="relative font-sans font-bold text-[#00FFFF] text-3xl text-center">
-                                    Bikini Swap
-                                    <img src="./Main_Photos/Poster.jpg"
-                                        class="w-[180px] mt-0 object-contain rounded-md mx-auto" />
-                                </div>
                             </div>
-
                         </div>
                     </div>
-                </div>
 
-            </div>
+                </div>
 
 
         </div>
@@ -188,13 +189,45 @@
                     txtt.classList.remove('text-red-500');
                     txtt.classList.add('text-green-400');
                     updateCoins(2 * betAmount);
+
+                    // ---------------------------
+                    // SAVE WIN TO DB
+                    // ---------------------------
+                    fetch("/api/saveHistory", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            game: "BikiniSwap",
+                            result: "W",
+                            amount: betAmount,
+                            profit: betAmount,
+                            choice: cl
+                        })
+                    });
+
                 } else {
                     txtt.textContent = "You Lose";
                     txtt.classList.remove('text-white');
                     txtt.classList.remove('text-green-400');
                     txtt.classList.add('text-red-500');
                     updateCoins(-1 * betAmount);
+
+                    // ---------------------------
+                    // SAVE LOSS TO DB
+                    // ---------------------------
+                    fetch("/api/saveHistory", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            game: "BikiniSwap",
+                            result: "L",
+                            amount: betAmount,
+                            profit: 0,
+                            choice: cl
+                        })
+                    });
                 }
+
                 nm.classList.add("opacity-0");
                 setTimeout(() => {
                     nm.textContent = "Select Colour";

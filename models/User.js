@@ -1,11 +1,9 @@
-// models/User.js
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
-  coins: { type: Number, default: 10000 }, // starting coins
+  password: { type: String, required: true },  // NEW
+  coins: { type: Number, default: 10000 }
 });
 
-const User = mongoose.model("User", userSchema);
-
-module.exports = User;
+module.exports = mongoose.model("User", userSchema);

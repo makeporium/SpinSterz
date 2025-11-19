@@ -42,16 +42,19 @@ function startGame() {
   const mines = Math.min(Math.max(Number(minesInput.value) || 5, 1), 24);
   bet = Number(betInput.value) || 0;
   if (bet <= 0) return alert("Enter a valid bet amount");
+
   updateCoins(-bet);
-  //updateCoinDisplay();
+
   gemsFound = 0;
   revealed.clear();
   minePositions.clear();
   gameActive = true;
+
   while (minePositions.size < mines) {
     const pos = Math.floor(Math.random() * (ROWS * COLS));
     minePositions.add(pos);
   }
+
   renderBoard();
   updateStats();
   placeBetBtn.textContent = "Game Started";
@@ -61,6 +64,7 @@ function startGame() {
 function onTileClick(idx, tileEl) {
   if (!gameActive || revealed.has(idx)) return;
   revealed.add(idx);
+
   if (minePositions.has(idx)) {
     tileEl.innerHTML = '<span class="text-red-400 font-bold">💣</span>';
     tileEl.classList.add("bg-red-800");
@@ -69,13 +73,33 @@ function onTileClick(idx, tileEl) {
     tileEl.innerHTML = '<img src="./gem.png" class="w-10 h-10">';
     gemsFound++;
     updateStats();
+
     if (revealed.size === ROWS * COLS - minePositions.size) endGame(true);
   }
 }
 
-function endGame(won) {
+async function endGame(won) {
   gameActive = false;
   revealAllMines();
+
+  const finalProfit = won ? bet * gemsFound : 0;
+  const result = won ? "W" : "L";
+
+  // -----------------------------
+  // 🟢 SAVE TO MONGO DB
+  // -----------------------------
+  await fetch("/api/saveHistory", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      game: "Mines",
+      result,
+      amount: bet,
+      profit: finalProfit,
+      choice: `${gemsFound} gems`, // optional
+    }),
+  });
+
   alert(won ? "🎉 You cleared the board!" : "💣 Boom! You hit a mine.");
   placeBetBtn.textContent = "Place Bet";
   placeBetBtn.disabled = false;
@@ -83,10 +107,12 @@ function endGame(won) {
 
 function revealAllMines() {
   profitInput.value = 0;
+
   const tiles = boardContainer.children;
   for (let i = 0; i < tiles.length; i++) {
     const tile = tiles[i];
     const idx = Number(tile.dataset.index);
+
     if (minePositions.has(idx)) {
       if (!revealed.has(idx))
         tile.innerHTML = '<span class="text-red-400 font-bold">💣</span>';
@@ -98,15 +124,31 @@ function revealAllMines() {
 function updateStats() {
   gemsCount.value = gemsFound;
   profitInput.value = (bet * gemsFound).toFixed(2);
-  //updateStats(profitInput.value);
 }
 
-function cashOut() {
+async function cashOut() {
   if (!gameActive && gemsFound === 0) return alert("No active session.");
   const amount = Number(profitInput.value) || 0;
+
   if (amount > 0) {
     alert("Cashed out: " + amount);
     updateCoins(amount);
+
+    // -----------------------------
+    // 🟢 SAVE WIN TO DATABASE
+    // -----------------------------
+    await fetch("/api/saveHistory", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        game: "Mines",
+        result: "W",
+        amount: bet,
+        profit: amount,
+        choice: `${gemsFound} gems`,
+      }),
+    });
+
     gemsFound = 0;
     revealed.clear();
     minePositions.clear();

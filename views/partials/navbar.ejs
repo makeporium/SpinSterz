@@ -1,31 +1,37 @@
- <ul
-        class="items-center flex border-b-2 border-slate-900 shadow-black bg-slate-950 h-12 space-x-2 fixed z-50 w-full">
-        <a href="./"><img src="/logo.png" class="object-contain h-6 object-center ml-10"></a>
-        <img src="/navpics/peop.png" class="object-contain h-6 object-center ml-30">
-        <!-- <li class="text-gray-300 text-sm py-3 hover:font-semibold">12,000</li> -->
-        <li class="text-gray-300 text-sm py-3 cursor-pointer hover:text-white hover:scale-105 transition-transform"
-            onclick="toggle_12000();"> <!--this.classList.toggle('text-white'); this.classList.toggle('scale-105');-->
-            12,000
-        </li>
-        <img src="/navpics/award.png" class="object-contain h-6 object-center ml-5">
-        <li class="text-gray-300 text-sm py-3 cursor-pointer hover:text-white hover:scale-105 transition-transform"
-            onclick="toggle_dailyFree()">Daily Free
-        </li>
-        <img src="/navpics/rank.png" class="object-contain h-6 object-center ml-4">
-        <li class="text-gray-300 text-sm py-3 cursor-pointer hover:text-white hover:scale-105 transition-transform"
-            onclick="toggle_rank()">Rank
-        </li>
-        <img src="/navpics/help.png" class="object-contain h-6 object-center ml-5">
-        <li class="text-gray-300 text-sm py-3 cursor-pointer hover:text-white hover:scale-105 transition-transform"
-            onclick="toggle_help()"">Help
+<ul class="items-center flex border-b-2 border-slate-900 shadow-black bg-slate-950 h-12 space-x-2 fixed z-50 w-full">
+    <a href="./"><img src="/logo.png" class="object-contain h-6 object-center ml-10"></a>
+    <img src="/navpics/peop.png" class="object-contain h-6 object-center ml-30">
+    <!-- <li class="text-gray-300 text-sm py-3 hover:font-semibold">12,000</li> -->
+    <li class="text-gray-300 text-sm py-3 cursor-pointer hover:text-white hover:scale-105 transition-transform"
+        onclick="toggle_12000();"> <!--this.classList.toggle('text-white'); this.classList.toggle('scale-105');-->
+        12,000
+    </li>
+    <img src="/navpics/award.png" class="object-contain h-6 object-center ml-5">
+    <li class="text-gray-300 text-sm py-3 cursor-pointer hover:text-white hover:scale-105 transition-transform"
+        onclick="toggle_dailyFree()">Daily Free
+    </li>
+    <img src="/navpics/rank.png" class="object-contain h-6 object-center ml-4">
+    <li class="text-gray-300 text-sm py-3 cursor-pointer hover:text-white hover:scale-105 transition-transform"
+        onclick="toggle_rank()">Rank
+    </li>
+    <img src="/navpics/help.png" class="object-contain h-6 object-center ml-5">
+    <li class="text-gray-300 text-sm py-3 cursor-pointer hover:text-white hover:scale-105 transition-transform"
+        onclick="toggle_help()"">Help
         </li>
 
-        <!-- <li id="coin-count" class="text-gray-300 text-sm py-3 px-2 ml-32">...</li> -->
-        <li id="coin-count" class="text-gray-300 text-sm py-3 px-2 ml-32"><%= coins %></li>
-        <img src="/navpics/deposit.png" class="object-contain h-6 object-center">
-        <img src="/navpics/profile.png" class="object-contain h-6 object-center">
-        <li class="text-gray-300 text-sm py-3 ml-3 mr-4">|</li>
-        <img src="/navpics/settings.png" class="object-contain h-6 object-center">
+        <!-- <li id=" coin-count" class="text-gray-300 text-sm py-3 px-2 ml-32">...</li> -->
+    <li id="coin-count" class="text-gray-300 text-sm py-3 px-2 ml-32">
+        ...
+    </li>
 
-    </ul>
-    <script src="/nav.js"></script>
+    <!-- <img src="/navpics/deposit.png" class="object-contain h-6 object-center"> -->
+    <a href="/logout" class="size-2 px-3 py-2 bg-red-600 text-white rounded hover:bg-red-800 transition">
+        Sign Out
+    </a>
+
+    <img src="/navpics/profile.png" class="object-contain h-6 object-center">
+    <li class="text-gray-300 text-sm py-3 ml-3 mr-4">|</li>
+    <img src="/navpics/settings.png" class="object-contain h-6 object-center">
+
+</ul>
+<script src="/nav.js"></script>

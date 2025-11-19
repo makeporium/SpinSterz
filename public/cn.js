@@ -6,8 +6,7 @@ async function updateCoins(amount) {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      username: "ayush",   // later change when login system added
-      amount: amount       // + wins / - losses
+      amount: amount // + wins / - losses
     }),
   });
 

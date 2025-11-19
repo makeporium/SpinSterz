@@ -2,15 +2,13 @@ function toggle_12000() {
   const body = document.getElementById("body");
   if (!body) return;
 
-  body.classList.toggle("overflow-hidden");
-
   const twelve_thousand = document.getElementById("12000");
   if (!twelve_thousand) return;
 
+  body.classList.toggle("overflow-hidden");
   twelve_thousand.classList.toggle("flex");
   twelve_thousand.classList.toggle("hidden");
 }
-
 
 class CoinFlipGame {
   constructor() {
@@ -23,18 +21,31 @@ class CoinFlipGame {
     this.loadData(); // Load stored history and totals
   }
 
-  loadData() {
-    const saved = localStorage.getItem("coinHistory");
-    if (saved) {
-      this.gameHistory = JSON.parse(saved);
-      this.updateHistoryDisplay();
-    }
+  // -------------------------
+  // LOAD HISTORY & TOTALS FROM DATABASE
+  // -------------------------
+  async loadData() {
+    try {
+      const res = await fetch("/api/getHistory");
+      const data = await res.json();
 
-    const savedTotals = localStorage.getItem("coinTotals");
-    if (savedTotals) {
-      const { totalAmt, totalProfit } = JSON.parse(savedTotals);
+      this.gameHistory = data;
+
+      // Calculate totals
+      let totalAmt = 0;
+      let totalProfit = 0;
+
+      data.forEach((g) => {
+        totalAmt += g.amount || 0;
+        totalProfit += g.profit || 0;
+      });
+
       this.total_amt_ht.textContent = totalAmt;
       this.total_profit_ht.textContent = totalProfit;
+
+      this.updateHistoryDisplay();
+    } catch (err) {
+      console.error("Error loading history:", err);
     }
   }
 
@@ -119,8 +130,12 @@ class CoinFlipGame {
     `;
   }
 
-  afteranimations(num1, sidename) {
+  // -------------------------
+  // AFTER ANIMATIONS → SAVE TO DATABASE
+  // -------------------------
+  async afteranimations(num1, sidename) {
     const amt = Number(num1) || 0;
+
     this.total_amt_ht.textContent =
       Number(this.total_amt_ht.textContent) + amt;
     updateCoins(-amt);
@@ -136,24 +151,24 @@ class CoinFlipGame {
         Number(this.total_profit_ht.textContent) + amt;
       result = "W";
       profit = amt;
+
       updateCoins(2 * amt);
     }
 
-    // Update history
-    this.gameHistory.push({ result, amount: amt, profit });
-    if (this.gameHistory.length > 5) this.gameHistory.shift();
+    // SAVE TO MONGO DB
+    await fetch("/api/saveHistory", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        result,
+        amount: amt,
+        profit,
+      }),
+    });
 
-    // Save to localStorage
-    localStorage.setItem("coinHistory", JSON.stringify(this.gameHistory));
-    localStorage.setItem(
-      "coinTotals",
-      JSON.stringify({
-        totalAmt: Number(this.total_amt_ht.textContent),
-        totalProfit: Number(this.total_profit_ht.textContent),
-      })
-    );
+    // Refresh UI with DB data
+    this.loadData();
 
-    this.updateHistoryDisplay();
     this.htend();
   }
 
@@ -208,7 +223,6 @@ class CoinFlipGame {
 window.addEventListener("DOMContentLoaded", () => {
   window.coinGame = new CoinFlipGame();
 
-  // Bridge functions for onclick HTML compatibility
   window.htstart = (num1, sidename) => coinGame.htstart(num1, sidename);
   window.afteranimations = (num1, sidename) =>
     coinGame.afteranimations(num1, sidename);

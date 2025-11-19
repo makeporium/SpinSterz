@@ -4,7 +4,7 @@ function getGameData() {
     const dt = localStorage.getItem(DATA_KEY);
 
     if (!dt) {
-        const start = { coins: 10000, wins:0, loss:0};
+        const start = { coins: 10000 };
         saveGameData(start);
         return start;
     }
@@ -18,9 +18,7 @@ function saveGameData(dataObject) {
 
 function updateCoins(amount) {
   const data = getGameData();
-  if(amount > 0){data.wins++;}
-  if(amount < 0){data.loss++;}
-  
+
   data.coins += amount;
   
   saveGameData(data);
@@ -32,9 +30,7 @@ function updateCoins(amount) {
 
 function updateCoinDisplay() {
   const data = getGameData();
-  console.log("wins: ", data.wins);
-  console.log(" ");
-  console.log("loss: ", data.loss);
+
   const coinElement = document.getElementById('coin-count');
   if (coinElement) {
     coinElement.textContent = data.coins;

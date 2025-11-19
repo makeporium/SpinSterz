@@ -12,8 +12,6 @@ function toggle_12000() {
 }
 
 
-
-
 class CoinFlipGame {
   constructor() {
     this.gameHistory = [];
@@ -207,7 +205,6 @@ class CoinFlipGame {
   }
 }
 
-// ✅ Initialize everything only after DOM is ready
 window.addEventListener("DOMContentLoaded", () => {
   window.coinGame = new CoinFlipGame();
 

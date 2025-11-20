@@ -11,8 +11,18 @@ const app = express();
 // ---------------- MIDDLEWARE ----------------
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+/**| Part                   | Meaning                                          |
+| ---------------------- | ------------------------------------------------ |
+| `express.urlencoded()` | Middleware to read HTML form submissions         |
+| `{ extended: true }`   | Allows nested objects like `{ user: {name:..} }` |
+ */
 app.use(express.static(path.join(__dirname, "public")));
-
+/**| Part                             | Meaning                                         |
+| -------------------------------- | ----------------------------------------------- |
+| `express.static(...)`            | Serves CSS, JS, image files directly            |
+| `path.join(__dirname, "public")` | Builds correct OS path like `/Users/.../public` |
+| `__dirname`                      | Node variable: folder of current file           |
+ */
 app.use(
   session({
     secret: "supersecretkey",
@@ -36,6 +46,10 @@ function requireLogin(req, res, next) {
 // ---------------- EJS SETUP ----------------
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+
+/**tells Express to use EJS templates for frontend
+ * sets folder path where .ejs files are stored
+ */
 
 // ---------------- AUTH ROUTES ----------------
 app.get("/login", (req, res) => res.render("login"));
